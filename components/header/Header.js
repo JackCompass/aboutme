@@ -1,4 +1,5 @@
 import styles from "./Header.module.css";
+import Link from "next/link";
 
 const Header = (props) => {
     return (
@@ -6,11 +7,11 @@ const Header = (props) => {
             <div className={styles.container}>
                 <div className={styles.header}>
                     <div className={styles.author}>
-                        <h3>Anuj Singh</h3>
+                        <Link href={"/"}><h3 className={"link"}>Anuj Singh</h3></Link>
                     </div>
                     <div className={styles.navigation}>
-                        <h4>Projects</h4>
-                        <h4>Discoveries</h4>
+                        <Link href={"/projects"}><h4 className={"link"}>Projects</h4></Link>
+                        <Link href={"/discoveries"}><h4 className={"link"}>Discoveries</h4></Link>
                     </div>
                 </div>
                 {props.children}
