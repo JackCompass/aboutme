@@ -1,0 +1,11 @@
+.discovery_title {
+    font-size: 1.5rem;
+}
+
+.discovery_description {
+    width: 100%;
+}
+
+.discovery_description p {
+    margin: 0;
+}
