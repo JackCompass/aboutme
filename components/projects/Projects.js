@@ -1,63 +1,32 @@
 import styles from "./Projects.module.css";
+import useProject from "./useProject";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import {useRecoilValue} from "recoil";
+import {filesData} from "../../state/atom";
 
 const Projects = () => {
+
+    const {} = useProject();
+    const fileContents = useRecoilValue(filesData);
+
     return (
         <>
             <div className={styles.author__projects}>
-                <div>
-                    <h2 className={styles.project_title}>Cloudberry</h2>
-                    <div className={styles.project_description}>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, dicta distinctio
-                            dolores,
-                            eius error esse et, impedit ipsa maiores obcaecati officiis optio pariatur praesentium quam
-                            quia
-                            quibusdam rerum. In, quibusdam.</p>
-                    </div>
-                </div>
+                {fileContents.length !== 0 ?
+                    <>
+                        {fileContents.map((fileContent, index) => {
+                            return (
+                                <div key={index}>
+                                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                        {fileContents.length !== 0 ? fileContents[index] : ""}
+                                    </ReactMarkdown>
+                                </div>
+                            )
+                        })}
 
-                <div>
-                    <h2 className={styles.project_title}>Cloudberry</h2>
-                    <div className={styles.project_description}>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, dicta distinctio
-                            dolores,
-                            eius error esse et, impedit ipsa maiores obcaecati officiis optio pariatur praesentium quam
-                            quia
-                            quibusdam rerum. In, quibusdam.</p>
-                    </div>
-                </div>
-
-                <div>
-                    <h2 className={styles.project_title}>Cloudberry</h2>
-                    <div className={styles.project_description}>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, dicta distinctio
-                            dolores,
-                            eius error esse et, impedit ipsa maiores obcaecati officiis optio pariatur praesentium quam
-                            quia
-                            quibusdam rerum. In, quibusdam.</p>
-                    </div>
-                </div>
-
-                <div>
-                    <h2 className={styles.project_title}>Cloudberry</h2>
-                    <div className={styles.project_description}>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, dicta distinctio
-                            dolores,
-                            eius error esse et, impedit ipsa maiores obcaecati officiis optio pariatur praesentium quam
-                            quia
-                            quibusdam rerum. In, quibusdam.</p>
-                    </div>
-                </div>
-
-                <div>
-                    <h2 className={styles.project_title}>Cloudberry</h2>
-                    <div className={styles.project_description}>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, dicta distinctio
-                            dolores,
-                            eius error esse et, impedit ipsa maiores obcaecati officiis optio pariatur praesentium quam
-                            quia
-                            quibusdam rerum. In, quibusdam.</p>
-                    </div>
-                </div>
+                    </>
+                    : ""}
             </div>
         </>
     )

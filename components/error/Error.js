@@ -12,10 +12,6 @@ class Error extends React.Component {
         return { hasError: true };
     }
 
-    componentDidMount() {
-        console.log('Error Component Mounted')
-    }
-
     componentDidCatch(error, errorInfo) {
         console.log('Error: ', error);
         console.log('Error Info: ', errorInfo);
