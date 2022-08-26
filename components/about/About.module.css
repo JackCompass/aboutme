@@ -12,6 +12,8 @@
 .author__description {
     margin: 0;
     padding: 8px;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 .author__section_title {

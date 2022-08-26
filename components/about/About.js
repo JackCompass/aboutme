@@ -16,8 +16,8 @@ const About = () => {
 
                 </div>
                 <p className={styles.author__description}>
-                    lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
-                    et dolore magna aliqua.
+                    Hey, I am Anuj Singh. I am a software engineer by profession.
+                    I build neat things and sometimes I write about them too.
                 </p>
             </div>
             <div className={styles.author__work}>
