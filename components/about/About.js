@@ -9,7 +9,8 @@ const About = () => {
             <div className={styles.author}>
                 <div className={styles.image_container}>
                     <Image
-                        src={"/bruce_wayne.webp"}
+                        className={styles.image}
+                        src={"/author_metro.jpg"}
                         height={"120px"}
                         width={"120px"}
                         alt={"author image"}/>

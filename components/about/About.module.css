@@ -5,6 +5,10 @@
     display: flex;
 }
 
+.image {
+    object-fit: cover;
+}
+
 .image_container {
     min-width: 120px;
 }
