@@ -1,7 +1,11 @@
 import styles from "./Header.module.css";
 import Link from "next/link";
+import useHeader from "./useHeader";
 
 const Header = (props) => {
+
+    const {} = useHeader();
+
     return (
         <>
             <div className={styles.container}>

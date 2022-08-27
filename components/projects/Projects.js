@@ -1,15 +1,10 @@
 import styles from "./Projects.module.css";
-import useProject from "./useProject";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import {useRecoilValue} from "recoil";
-import {filesData} from "../../state/atom";
+import useProjects from "./useProjects";
 
-const Projects = () => {
-
-    const {} = useProject();
-    const fileContents = useRecoilValue(filesData);
-
+const Projects = ({fileContents}) => {
+    const {} = useProjects()
     return (
         <>
             <div className={styles.author__projects}>

@@ -2,8 +2,15 @@ import styles from "./About.module.css";
 import Image from "next/image";
 import Projects from "../projects/Projects";
 import Discoveries from "../discoveries/Discoveries";
+import {useRecoilValue} from "recoil";
+import {filesPreviewData} from "../../state/atom";
+import useAbout from "./useAbout";
 
 const About = () => {
+
+    const {} = useAbout()
+    const getFilePreviewData = useRecoilValue(filesPreviewData);
+
     return (
         <>
             <div className={styles.author}>
@@ -32,7 +39,7 @@ const About = () => {
             </div>
             <div>
                 <h2 className={styles.author__section_title}>Projects</h2>
-                <Projects />
+                <Projects fileContents={getFilePreviewData} />
             </div>
 
             <div>

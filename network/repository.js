@@ -7,9 +7,7 @@ export class Repository {
 
     static async getRepositoryFileNames() {
         const response = await axios.get(this.repositoryFileNameUrl);
-        const fileNames = response.data.tree.map(file => file.path);
-        console.log(fileNames);
-        return fileNames;
+        return response.data.tree.map(file => file.path);
     }
 
     static async getRepositoryFileContent(fileNames) {
@@ -19,5 +17,28 @@ export class Repository {
             contents.push(response.data);
         }
         return contents
+    }
+
+    static extractFileNameUsingRegex(fileNames, patterns) {
+        let previewFiles = [], contentFiles = [];
+
+        // Creating regex patterns for extracting file names
+        const regex = patterns.map( pattern => new RegExp(pattern));
+
+        for (const fileName of fileNames) {
+            const previewMatch = regex[0].test(fileName);
+            const contentMatch = regex[1].test(fileName);
+
+            if (previewMatch) {
+                previewFiles.push(fileName);
+            } else if (contentMatch) {
+                contentFiles.push(fileName);
+            }
+
+        }
+        return {
+            previewFiles,
+            contentFiles
+        };
     }
 }
