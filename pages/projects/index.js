@@ -11,7 +11,11 @@ const ProjectModels = () => {
             <Header>
                 <div className={styles.section__info}>
                     <h1 className={styles.section__title}>Projects</h1>
-                    <p className={styles.section__description}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos enim exercitationem fugit ipsum magnam nihil recusandae sed vitae voluptates. Asperiores corporis debitis eos id inventore placeat tenetur voluptate. Deleniti, impedit.</p>
+                    <p className={styles.section__description}>
+                        Take a look at some of the projects I have developed. Few of them still might be in development.
+                        Most of the projects I developed in my free time.
+                        Feel free to raise a PR or an Issue. If you have any suggestions, feel free to reach out to me.
+                    </p>
                 </div>
                 <Projects fileContents={getFilesData}/>
             </Header>
