@@ -13,6 +13,7 @@
 
 .author {
     margin-left: 8px;
+    position: relative;
 }
 
 .navigation {
@@ -24,6 +25,30 @@
     margin: auto 8px;
     text-decoration: underline;
     font-weight: 600;
+}
+
+
+.author__name:hover {
+    background-color: black;
+    color: white;
+}
+
+.author__name::after {
+    position: absolute;
+    content: "";
+    height: 23px;
+    width: 13px;
+    background-color: black;
+    top: 19px;
+    left: 95px;
+    animation: moveForward 0.8s infinite;
+}
+
+@keyframes moveForward {
+    50% {
+        opacity: 0%;
+
+    }
 }
 
 @media (max-width: 550px) {
