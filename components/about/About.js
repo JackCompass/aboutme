@@ -3,13 +3,14 @@ import Image from "next/image";
 import Projects from "../projects/Projects";
 import Discoveries from "../discoveries/Discoveries";
 import {useRecoilValue} from "recoil";
-import {filesPreviewData} from "../../state/atom";
+import {discoveryFilesData, filesPreviewData} from "../../state/atom";
 import useAbout from "./useAbout";
 
 const About = () => {
 
     const {} = useAbout()
     const getFilePreviewData = useRecoilValue(filesPreviewData);
+    const getDiscoverFilesData = useRecoilValue(discoveryFilesData);
 
     return (
         <>
@@ -44,7 +45,7 @@ const About = () => {
 
             <div>
                 <h2 className={styles.author__section_title}>Discoveries</h2>
-                <Discoveries />
+                <Discoveries fileContents={getDiscoverFilesData}/>
             </div>
         </>
     )

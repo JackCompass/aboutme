@@ -6,7 +6,7 @@ const ProjectDetails = ({projectTitle}) => {
     const {projectDetail} = useProjectDetails(projectTitle);
 
     if (projectDetail === null || projectDetail === undefined) {
-        return <h2>Loading...</h2>
+        return <h2 style={{ paddingLeft: "8px"}}>Loading...</h2>
     } else {
         return (
             <>

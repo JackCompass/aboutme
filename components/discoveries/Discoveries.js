@@ -1,63 +1,32 @@
 import styles from './Discoveries.module.css';
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import Link from "next/link";
+import {extractFileName} from "../../state/utility";
 
-const Discoveries = () => {
+const Discoveries = ({fileContents}) => {
     return (
         <>
             <div className={styles.author__discoveries}>
-                <div>
-                    <h2 className={styles.discovery_title}>Cloudberry</h2>
-                    <div className={styles.discovery_description}>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, dicta distinctio
-                            dolores,
-                            eius error esse et, impedit ipsa maiores obcaecati officiis optio pariatur praesentium quam
-                            quia
-                            quibusdam rerum. In, quibusdam.</p>
-                    </div>
-                </div>
+                {fileContents.length !== 0 ?
+                    <>
+                        {fileContents.map((fileContent, index) => {
+                            return (
+                                // eslint-disable-next-line react/jsx-key
+                                <div key={index}>
+                                    <div className={styles.author__discovery} >
+                                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                                            {fileContent.length !== 0 ? fileContent.data : ""}
+                                        </ReactMarkdown>
+                                    </div>
+                                    <Link
+                                        href={`/discoveries/${extractFileName(fileContent.filename)}`}><a>[...]</a></Link>
+                                </div>
+                            )
+                        })}
 
-                <div>
-                    <h2 className={styles.discovery_title}>Cloudberry</h2>
-                    <div className={styles.discovery_description}>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, dicta distinctio
-                            dolores,
-                            eius error esse et, impedit ipsa maiores obcaecati officiis optio pariatur praesentium quam
-                            quia
-                            quibusdam rerum. In, quibusdam.</p>
-                    </div>
-                </div>
-
-                <div>
-                    <h2 className={styles.discovery_title}>Cloudberry</h2>
-                    <div className={styles.discovery_description}>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, dicta distinctio
-                            dolores,
-                            eius error esse et, impedit ipsa maiores obcaecati officiis optio pariatur praesentium quam
-                            quia
-                            quibusdam rerum. In, quibusdam.</p>
-                    </div>
-                </div>
-
-                <div>
-                    <h2 className={styles.discovery_title}>Cloudberry</h2>
-                    <div className={styles.discovery_description}>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, dicta distinctio
-                            dolores,
-                            eius error esse et, impedit ipsa maiores obcaecati officiis optio pariatur praesentium quam
-                            quia
-                            quibusdam rerum. In, quibusdam.</p>
-                    </div>
-                </div>
-
-                <div>
-                    <h2 className={styles.discovery_title}>Cloudberry</h2>
-                    <div className={styles.discovery_description}>
-                        <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consectetur, dicta distinctio
-                            dolores,
-                            eius error esse et, impedit ipsa maiores obcaecati officiis optio pariatur praesentium quam
-                            quia
-                            quibusdam rerum. In, quibusdam.</p>
-                    </div>
-                </div>
+                    </>
+                    : ""}
             </div>
         </>
     )

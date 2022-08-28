@@ -1,11 +1,13 @@
-.discovery_title {
-    font-size: 1.5rem;
+.author__discoveries {
+    margin-bottom: 50px;
 }
 
-.discovery_description {
-    width: 100%;
+.author__discoveries a {
+    font-size: 1.15rem;
+    color: black;
 }
 
-.discovery_description p {
-    margin: 0;
+.author__discovery {
+    height: 220px;
+    overflow: hidden;
 }

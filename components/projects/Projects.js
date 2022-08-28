@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import useProjects from "./useProjects";
 import Link from "next/link";
+import {extractFileName} from "../../state/utility";
 
 const Projects = ({fileContents}) => {
     const {} = useProjects()
@@ -31,8 +32,3 @@ const Projects = ({fileContents}) => {
 
 export default Projects;
 
-const extractFileName = (filePath) => {
-    const filename = filePath.split('/').at(-1).split('.').at(0);
-    console.log(filename);
-    return filename;
-}

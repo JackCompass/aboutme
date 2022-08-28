@@ -20,7 +20,7 @@ export class Repository {
     }
 
     static extractFileNameUsingRegex(fileNames, patterns) {
-        let previewFiles = [], contentFiles = [];
+        let previewFiles = [], contentFiles = [], discoveryFiles = [];
 
         // Creating regex patterns for extracting file names
         const regex = patterns.map( pattern => new RegExp(pattern));
@@ -28,6 +28,7 @@ export class Repository {
         for (const fileName of fileNames) {
             const previewMatch = regex[0].test(fileName);
             const contentMatch = regex[1].test(fileName);
+            const discoveryMatch = regex[2].test(fileName);
 
             if (previewMatch) {
                 previewFiles.push(fileName);
@@ -35,10 +36,15 @@ export class Repository {
                 contentFiles.push(fileName);
             }
 
+            if (discoveryMatch) {
+                discoveryFiles.push(fileName);
+            }
+
         }
         return {
             previewFiles,
-            contentFiles
+            contentFiles,
+            discoveryFiles
         };
     }
 }
