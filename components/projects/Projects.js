@@ -5,7 +5,6 @@ import useProjects from "./useProjects";
 
 const Projects = ({fileContents}) => {
     const {} = useProjects()
-    console.log("Here is the fileContents: ", fileContents);
     return (
         <>
             <div className={styles.author__projects}>

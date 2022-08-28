@@ -1,13 +1,15 @@
 import {useRecoilValue, useSetRecoilState} from "recoil";
 import {contentFilesList, filesData} from "../../state/atom";
 import {useEffect} from "react";
-import useSWR from "swr";
+import useSWR, {mutate} from "swr";
 import {Repository} from "../../network/repository";
+import useAbout from "../about/useAbout";
 
 const useProjects = () => {
 
     const getContentFilesList = useRecoilValue(contentFilesList)
     const setFilesData = useSetRecoilState(filesData)
+    const {} = useAbout();
 
     const {data: fileContent, error: fileContentError} = useSWR(getContentFilesList.length !== 0 ? "repositoryFileContent" : null, () => Repository.getRepositoryFileContent(getContentFilesList));
 
@@ -16,6 +18,7 @@ const useProjects = () => {
             setFilesData(fileContent);
         }
     }, [fileContent])
+
 
     return {
         fileContent

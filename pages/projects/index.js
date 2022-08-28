@@ -2,10 +2,10 @@ import styles from "../../styles/ProjectModels.module.css";
 import Header from "../../components/header/Header";
 import Projects from "../../components/projects/Projects";
 import {useRecoilValue} from "recoil";
-import {filesData} from "../../state/atom";
+import {filesPreviewData} from "../../state/atom";
 
 const ProjectModels = () => {
-    const getFilesData = useRecoilValue(filesData);
+    const getFilesPreviewData = useRecoilValue(filesPreviewData);
     return (
         <>
             <Header>
@@ -17,7 +17,7 @@ const ProjectModels = () => {
                         Feel free to raise a PR or an Issue. If you have any suggestions, feel free to reach out to me.
                     </p>
                 </div>
-                <Projects fileContents={getFilesData}/>
+                <Projects fileContents={getFilesPreviewData}/>
             </Header>
         </>
     )
