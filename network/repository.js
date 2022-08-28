@@ -14,7 +14,7 @@ export class Repository {
         const contents = [];
         for (const fileName of fileNames) {
             const response = await axios.get(this.repositoryFileContentUrl + fileName);
-            contents.push(response.data);
+            contents.push({filename: fileName, data: response.data});
         }
         return contents
     }

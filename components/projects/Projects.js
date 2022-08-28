@@ -5,6 +5,7 @@ import useProjects from "./useProjects";
 
 const Projects = ({fileContents}) => {
     const {} = useProjects()
+    console.log("Here is the fileContents: ", fileContents);
     return (
         <>
             <div className={styles.author__projects}>
@@ -14,7 +15,7 @@ const Projects = ({fileContents}) => {
                             return (
                                 <div key={index}>
                                     <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                                        {fileContents.length !== 0 ? fileContents[index] : ""}
+                                        {fileContents.length !== 0 ? fileContents[index].data : ""}
                                     </ReactMarkdown>
                                 </div>
                             )
