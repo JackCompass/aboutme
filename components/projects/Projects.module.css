@@ -16,6 +16,10 @@
     text-decoration: underline;
 }
 
+.author__projects h1:hover {
+    text-decoration: none;
+}
+
 .discovery_description p {
     margin: 0;
 }

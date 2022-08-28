@@ -21,9 +21,14 @@
     flex-wrap: wrap;
 }
 
+.navigation h4:hover {
+    text-decoration: none;
+}
+
 .navigation h4 {
     margin: auto 8px;
     text-decoration: underline;
+    text-decoration-thickness: 2px;
     font-weight: 600;
 }
 
