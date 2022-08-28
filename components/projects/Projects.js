@@ -32,5 +32,7 @@ const Projects = ({fileContents}) => {
 export default Projects;
 
 const extractFileName = (filePath) => {
-    return filePath.split('/').at(0);
+    const filename = filePath.split('/').at(-1).split('.').at(0);
+    console.log(filename);
+    return filename;
 }

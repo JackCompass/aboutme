@@ -1,5 +1,4 @@
 import useProjectDetails from "./useProjectDetails";
-import Projects from "./Projects";
 import ShowProject from "../showProject/ShowProject";
 
 const ProjectDetails = ({projectTitle}) => {
