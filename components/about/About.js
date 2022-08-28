@@ -5,6 +5,7 @@ import Discoveries from "../discoveries/Discoveries";
 import {useRecoilValue} from "recoil";
 import {discoveryFilesData, filesPreviewData} from "../../state/atom";
 import useAbout from "./useAbout";
+import Link from "next/link";
 
 const About = () => {
 
@@ -24,10 +25,17 @@ const About = () => {
                         alt={"author image"}/>
 
                 </div>
-                <p className={styles.author__description}>
-                    Hey, I am Anuj Singh. I am a software engineer by profession.
-                    I build neat things and sometimes I write about them too.
-                </p>
+                <div>
+                    <p className={styles.author__description}>
+                        Hey, I am Anuj Singh. I am a software engineer by profession.
+                        I build neat things and sometimes I write about them too.
+                    </p>
+                    <div className={styles.author__social_links}>
+                        <Link href={"https://linkedin.com/in/anujsingh1729/"}><a target={"_blank"}>Linkedin</a></Link>
+                        <Link href={"https://github.com/JackCompass"}><a target={"_blank"}>GitHub</a></Link>
+
+                    </div>
+                </div>
             </div>
             <div className={styles.author__work}>
                 <h2 className={styles.author__section_title}>Work</h2>
@@ -40,7 +48,7 @@ const About = () => {
             </div>
             <div>
                 <h2 className={styles.author__section_title}>Projects</h2>
-                <Projects fileContents={getFilePreviewData} />
+                <Projects fileContents={getFilePreviewData}/>
             </div>
 
             <div>
