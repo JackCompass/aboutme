@@ -41,7 +41,7 @@ const About = () => {
                 <h2 className={styles.author__section_title}>Work</h2>
                 <ul>
                     <li>Software Engineer @Roro - Present</li>
-                    <li>Techops Engineer @PayTm - 1/2022 - 3/2022</li>
+                    <li>Techops Engineer @PayTm - 2021 - 2022</li>
                     <li>Freelancing - 2021-2022</li>
                     <li>The Spark foundation - 6/2021 - 7/2021</li>
                 </ul>
