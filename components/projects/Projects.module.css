@@ -12,6 +12,10 @@
     width: 100%;
 }
 
+.author__projects h1 {
+    text-decoration: underline;
+}
+
 .discovery_description p {
     margin: 0;
 }
@@ -20,4 +24,9 @@
     .author__projects {
         grid-template-columns: 1fr;
     }
+}
+
+.author__projects a {
+    font-size: 1.15rem;
+    color: black;
 }

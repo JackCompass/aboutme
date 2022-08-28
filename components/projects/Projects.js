@@ -2,6 +2,7 @@ import styles from "./Projects.module.css";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import useProjects from "./useProjects";
+import Link from "next/link";
 
 const Projects = ({fileContents}) => {
     const {} = useProjects()
@@ -14,8 +15,9 @@ const Projects = ({fileContents}) => {
                             return (
                                 <div key={index}>
                                     <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                                        {fileContents.length !== 0 ? fileContents[index].data : ""}
+                                        {fileContent.length !== 0 ? fileContent.data : ""}
                                     </ReactMarkdown>
+                                    <Link href={`/projects/${extractFileName(fileContent.filename)}`}><a>[...]</a></Link>
                                 </div>
                             )
                         })}
@@ -28,3 +30,7 @@ const Projects = ({fileContents}) => {
 }
 
 export default Projects;
+
+const extractFileName = (filePath) => {
+    return filePath.split('/').at(0);
+}
