@@ -17,7 +17,7 @@ const useProjectDetails = (projectTitle) => {
             let searchFileName = projectTitle + '.md';
             const fileDetail = getFilesData.find( (file) => file.filename.split('/').at(-1) === searchFileName)
             if (fileDetail) {
-                setProjectDetail([fileDetail, ]);
+                setProjectDetail(fileDetail);
             }
         }
     }, [getFilesData])
