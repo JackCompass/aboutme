@@ -32,6 +32,10 @@
     font-weight: unset;
 }
 
+.author__social_links a:hover {
+    text-decoration: none;
+}
+
 .author__section_title {
     font-size: 2.5rem;
 }
