@@ -13,7 +13,6 @@ const useDiscovery = (discoveryFile) => {
         if (getDiscoveryFilesData.length !== 0) {
             let searchFileName = discoveryFile + '.discovery.md';
             const fileDetail = getDiscoveryFilesData.find( (file) => file.filename.split('/').at(-1) === searchFileName)
-            console.log('fileDetail', fileDetail);
             if (fileDetail) {
                 setDiscoveryDetail(fileDetail);
             }
