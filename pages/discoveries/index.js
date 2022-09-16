@@ -19,7 +19,7 @@ const Posts = () => {
                     </p>
                     <p>P.S. My future self can also remember it. 😶</p>
                 </div>
-                <Discoveries fileContents={getDiscoveryFilesData}/>
+                <Discoveries fileContents={getDiscoveryFilesData} fileError={null}/>
             </Header>
         </>
     )

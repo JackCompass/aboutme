@@ -9,9 +9,7 @@ import Link from "next/link";
 
 const About = () => {
 
-    const {} = useAbout()
-    const getFilePreviewData = useRecoilValue(filesPreviewData);
-    const getDiscoverFilesData = useRecoilValue(discoveryFilesData);
+    const {previewContent, previewContentError, discoveriesContent, discoveriesContentError} = useAbout()
 
     return (
         <>
@@ -48,12 +46,12 @@ const About = () => {
             </div>
             <div>
                 <h2 className={styles.author__section_title}>Projects</h2>
-                <Projects fileContents={getFilePreviewData}/>
+                <Projects fileContents={previewContent} fileError={previewContentError}/>
             </div>
 
             <div>
                 <h2 className={styles.author__section_title}>Discoveries</h2>
-                <Discoveries fileContents={getDiscoverFilesData}/>
+                <Discoveries fileContents={discoveriesContent} fileError={previewContentError}/>
             </div>
         </>
     )

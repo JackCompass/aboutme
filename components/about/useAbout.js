@@ -35,7 +35,12 @@ const useAbout = () => {
         }
     }, [discoveriesContent])
 
-    return {}
+    return {
+        previewContent,
+        previewContentError,
+        discoveriesContent,
+        discoveriesContentError
+    }
 }
 
 export default useAbout;

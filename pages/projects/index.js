@@ -17,7 +17,7 @@ const ProjectModels = () => {
                         Feel free to raise a PR or an Issue. If you have any suggestions, feel free to reach out to me.
                     </p>
                 </div>
-                <Projects fileContents={getFilesPreviewData}/>
+                <Projects fileContents={getFilesPreviewData} fileError={null}/>
             </Header>
         </>
     )
