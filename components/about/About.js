@@ -14,15 +14,7 @@ const About = () => {
     return (
         <>
             <div className={styles.author}>
-                <div className={styles.image_container}>
-                    <Image
-                        className={styles.image}
-                        src={"/author_metro.jpg"}
-                        height={"120px"}
-                        width={"120px"}
-                        alt={"author image"}/>
-
-                </div>
+                <div className={styles.image_container} />
                 <div>
                     <p className={styles.author__description}>
                         Hey, I am Anuj Singh. I am a software engineer by profession.
