@@ -33,8 +33,7 @@ const Projects = ({fileContents, fileError}) => {
                                         <ReactMarkdown remarkPlugins={[remarkGfm]}>
                                             {fileContent.length !== 0 ? fileContent.data : ""}
                                         </ReactMarkdown>
-                                        <Link
-                                            href={`/projects/${extractFileName(fileContent.filename)}`}><a>[...]</a></Link>
+                                        <Link className={'navigate-link'} href={`/projects/${extractFileName(fileContent.filename)}`}><a>[...]</a></Link>
                                     </div>
                                 )
                             })}
