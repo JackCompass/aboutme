@@ -34,3 +34,9 @@
     font-size: 1.15rem;
     color: black;
 }
+
+@media (prefers-color-scheme: dark) {
+    .author__projects a {
+        color: #fff;
+    }
+}
