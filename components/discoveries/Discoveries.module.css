@@ -7,6 +7,12 @@
     color: black;
 }
 
+@media (prefers-color-scheme: dark) {
+    .author__discoveries a {
+        color: #fff;
+    }
+}
+
 .author__discovery {
     height: 220px;
     overflow: hidden;

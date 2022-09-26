@@ -29,7 +29,7 @@ const Discoveries = ({fileContents, fileError}) => {
                                                 {fileContent.length !== 0 ? fileContent.data : ""}
                                             </ReactMarkdown>
                                         </div>
-                                        <Link className={'navigate-link'} href={`/discoveries/${extractFileName(fileContent.filename)}`}><a>[...]</a></Link>
+                                        <Link className={'navigate'} href={`/discoveries/${extractFileName(fileContent.filename)}`}><a>[...]</a></Link>
                                     </div>
                                 )
                             })}
