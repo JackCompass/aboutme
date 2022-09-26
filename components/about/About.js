@@ -1,9 +1,6 @@
 import styles from "./About.module.css";
-import Image from "next/image";
 import Projects from "../projects/Projects";
 import Discoveries from "../discoveries/Discoveries";
-import {useRecoilValue} from "recoil";
-import {discoveryFilesData, filesPreviewData} from "../../state/atom";
 import useAbout from "./useAbout";
 import Link from "next/link";
 

@@ -37,6 +37,12 @@
     font-weight: unset;
 }
 
+@media (prefers-color-scheme: dark) {
+    .author__social_links a {
+        color: #fff;
+    }
+}
+
 .author__social_links a:hover {
     text-decoration: none;
 }
