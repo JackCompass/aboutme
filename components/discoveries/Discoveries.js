@@ -30,7 +30,7 @@ const Discoveries = ({fileContents, fileError}) => {
                                             </ReactMarkdown>
                                         </div>
                                         <Link
-                                            href={`/discoveries/${extractFileName(fileContent.filename)}`}><a>[...]</a></Link>
+                                            href={`/discoveries/${extractFileName(fileContent.filename)}`}><a>[Read More...]</a></Link>
                                     </div>
                                 )
                             })}

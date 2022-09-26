@@ -49,6 +49,12 @@
     animation: moveForward 0.8s infinite;
 }
 
+@media (prefers-color-scheme: dark) {
+    .author__name::after {
+        background-color: white;
+    }
+}
+
 @keyframes moveForward {
     50% {
         opacity: 0%;

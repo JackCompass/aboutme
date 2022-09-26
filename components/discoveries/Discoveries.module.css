@@ -11,3 +11,11 @@
     height: 220px;
     overflow: hidden;
 }
+
+.author__discovery h1:first-child {
+    text-decoration: underline;
+}
+
+.author__discovery h1:first-child:hover {
+    text-decoration: none;
+}
