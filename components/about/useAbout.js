@@ -31,7 +31,7 @@ const useAbout = () => {
 
     useEffect(() => {
         if (discoveriesContent !== undefined && discoveriesContent.length !== 0) {
-            setDiscoveryFilesData(discoveriesContent);
+            setDiscoveryFilesData(discoveriesContent.slice().reverse());
         }
     }, [discoveriesContent])
 

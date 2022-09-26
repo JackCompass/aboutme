@@ -23,7 +23,7 @@ const UseNetwork = () => {
             const segregateFile = Repository.extractFileNameUsingRegex(fileNames, [".preview.md$", ".md$", "discovery.md"])
             setPreviewFilesList(segregateFile.previewFiles);
             setContentFilesList(segregateFile.contentFiles);
-            setDiscoveryFilesList(segregateFile.discoveryFiles);
+            setDiscoveryFilesList(segregateFile.discoveryFiles.slice().reverse());
         }
     }, [fileNames])
 
