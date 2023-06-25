@@ -1,31 +1,31 @@
-import {atom} from "recoil";
+import { atom } from "recoil";
 
 export const filesPreviewData = atom({
-    key: "filesPreviewDataKey",
-    default: []
+  key: "filesPreviewDataKey",
+  default: [],
 });
 
 export const filesData = atom({
-    key: "filesDataKey",
-    default: []
+  key: "filesDataKey",
+  default: [],
 });
 
 export const previewFilesList = atom({
-    key: "previewFilesListKey",
-    default: []
+  key: "previewFilesListKey",
+  default: [],
 });
 
 export const contentFilesList = atom({
-    key: "contentFilesListKey",
-    default: []
+  key: "contentFilesListKey",
+  default: [],
 });
 
 export const discoveryFilesList = atom({
-    key: "discoveryFilesListKey",
-    default: []
+  key: "discoveryFilesListKey",
+  default: [],
 });
 
 export const discoveryFilesData = atom({
-    key: "discoveryFilesDataKey",
-    default: []
+  key: "discoveryFilesDataKey",
+  default: [],
 });

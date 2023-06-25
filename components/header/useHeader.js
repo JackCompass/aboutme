@@ -1,12 +1,9 @@
 import useNetwork from "../../network/useNetwork";
 
 const useHeader = () => {
+  const {} = useNetwork();
 
-    const {} = useNetwork();
-
-    return {
-
-    }
-}
+  return {};
+};
 
 export default useHeader;

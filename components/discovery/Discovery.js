@@ -5,17 +5,19 @@ import remarkGfm from "remark-gfm";
 import rehypeHighlight from "rehype-highlight";
 import "highlight.js/styles/atom-one-dark.css";
 
-const Discovery = ({discoveryFile}) => {
-    const {discoveryDetail} = useDiscovery(discoveryFile);
-    return (
-        <>
-            <div className={styles.author__discovery}>
-                <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeHighlight]}>
-                    {discoveryDetail?.data}
-                </ReactMarkdown>
-            </div>
-        </>
-    )
-}
+const Discovery = ({ discoveryFile }) => {
+  const { discoveryDetail } = useDiscovery(discoveryFile);
+  return (
+    <>
+      <div className={styles.author__discovery}>
+        <ReactMarkdown
+          remarkPlugins={[remarkGfm]}
+          rehypePlugins={[rehypeHighlight]}>
+          {discoveryDetail?.data}
+        </ReactMarkdown>
+      </div>
+    </>
+  );
+};
 
 export default Discovery;
