@@ -24,17 +24,17 @@ const Discoveries = ({ fileContents, fileError }) => {
                 return (
                   <div key={index}>
                     <div className={styles.author__discovery}>
-                      <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                        {fileContent.length !== 0 ? fileContent.data : ""}
-                      </ReactMarkdown>
+                      <Link
+                        href={`/discoveries/${extractFileName(
+                          fileContent.filename,
+                        )}`}>
+                        <a>
+                          <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                            {fileContent.length !== 0 ? fileContent.data : ""}
+                          </ReactMarkdown>
+                        </a>
+                      </Link>
                     </div>
-                    <Link
-                      className={"navigate"}
-                      href={`/discoveries/${extractFileName(
-                        fileContent.filename,
-                      )}`}>
-                      <a>[...]</a>
-                    </Link>
                   </div>
                 );
               })}

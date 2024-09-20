@@ -30,15 +30,16 @@ const Projects = ({ fileContents, fileError }) => {
               {fileContents.map((fileContent, index) => {
                 return (
                   <div key={index}>
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                      {fileContent.length !== 0 ? fileContent.data : ""}
-                    </ReactMarkdown>
                     <Link
                       className={"navigate-link"}
                       href={`/projects/${extractFileName(
                         fileContent.filename,
                       )}`}>
-                      <a>[...]</a>
+                      <a>
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                          {fileContent.length !== 0 ? fileContent.data : ""}
+                        </ReactMarkdown>
+                      </a>
                     </Link>
                   </div>
                 );
