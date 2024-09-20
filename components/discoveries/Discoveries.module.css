@@ -4,6 +4,7 @@
 
 .author__discoveries a {
     color: black;
+    text-decoration: none;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -13,8 +14,9 @@
 }
 
 .author__discovery {
-    height: 220px;
+    height: fit-content;
     overflow: hidden;
+
 }
 
 .author__discovery h1:first-child {
