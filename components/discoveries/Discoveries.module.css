@@ -14,9 +14,12 @@
 }
 
 .author__discovery {
-    height: fit-content;
+    height: 208px;
     overflow: hidden;
+}
 
+.author__discovery p {
+    line-height: 20px;
 }
 
 .author__discovery h1:first-child {
