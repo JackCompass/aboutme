@@ -2,6 +2,10 @@
     margin-bottom: 50px;
 }
 
+.author__discoveries a {
+    color: black;
+}
+
 @media (prefers-color-scheme: dark) {
     .author__discoveries a {
         color: #fff;
