@@ -18,8 +18,8 @@ const About = () => {
         <div className={styles.image_container} />
         <div>
           <p className={styles.author__description}>
-            Hey, I am Anuj Singh. I am a software engineer by profession. I
-            build neat things and sometimes I write about them too.
+            Hey, I am Anuj Singh. I am a software engineer by profession. I either build or break stuffa all the time
+            and sometimes I write about them too.
           </p>
           <div className={styles.author__social_links}>
             <Link href={"https://linkedin.com/in/anujsingh1729/"}>
