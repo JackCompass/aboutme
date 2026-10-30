@@ -22,11 +22,17 @@ const About = () => {
             and sometimes I write about them too.
           </p>
           <div className={styles.author__social_links}>
-            <Link href={"https://linkedin.com/in/anujsingh1729/"}>
-              <a target={"_blank"}>Linkedin</a>
+            <Link
+              href={"https://linkedin.com/in/anujsingh1729/"}
+              target={"_blank"}
+              rel={"noopener noreferrer"}>
+              Linkedin
             </Link>
-            <Link href={"https://github.com/JackCompass"}>
-              <a target={"_blank"}>GitHub</a>
+            <Link
+              href={"https://github.com/JackCompass"}
+              target={"_blank"}
+              rel={"noopener noreferrer"}>
+              GitHub
             </Link>
           </div>
         </div>

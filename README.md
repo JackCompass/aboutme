@@ -4,7 +4,7 @@ Personal portfolio site built with [Next.js](https://nextjs.org/) (Pages Router)
 
 ## Prerequisites
 
-- **Node.js** 16.x or 18.x (recommended). Next.js 12 works best on these LTS lines.
+- **Node.js** 24.x (matches `.nvmrc` / `engines` and Vercel). Next.js 15 requires Node 18.18+, and Vercel currently only supports 22.x / 24.x / 26.x.
 - **npm** 8+ (comes with Node). This repo uses `package-lock.json`, so prefer npm over yarn/pnpm.
 
 No environment variables are required for local development. Content is loaded from public GitHub URLs.
