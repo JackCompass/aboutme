@@ -28,11 +28,19 @@ const About = () => {
               rel={"noopener noreferrer"}>
               Linkedin
             </Link>
+            <span aria-hidden="true">•</span>
             <Link
               href={"https://github.com/JackCompass"}
               target={"_blank"}
               rel={"noopener noreferrer"}>
               GitHub
+            </Link>
+            <span aria-hidden="true">•</span>
+            <Link
+              href={"https://x.com/anujsinghstwt"}
+              target={"_blank"}
+              rel={"noopener noreferrer"}>
+              X
             </Link>
           </div>
         </div>
