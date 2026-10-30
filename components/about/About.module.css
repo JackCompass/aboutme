@@ -37,13 +37,19 @@
 .author__social_links a:visited {
     color: #000;
     font-size: 1rem;
-    font-weight: unset;
+    font-weight: bold;
+}
+
+.author__social_links span {
+    color: #000;
+    font-size: 1rem;
 }
 
 @media (prefers-color-scheme: dark) {
     .author__social_links a,
     .author__social_links a:link,
-    .author__social_links a:visited {
+    .author__social_links a:visited,
+    .author__social_links span {
         color: #fff;
     }
 }
