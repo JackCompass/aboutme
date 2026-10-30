@@ -32,14 +32,18 @@
     gap: 8px;
 }
 
-.author__social_links a {
-    color: black;
+.author__social_links a,
+.author__social_links a:link,
+.author__social_links a:visited {
+    color: #000;
     font-size: 1rem;
     font-weight: unset;
 }
 
 @media (prefers-color-scheme: dark) {
-    .author__social_links a {
+    .author__social_links a,
+    .author__social_links a:link,
+    .author__social_links a:visited {
         color: #fff;
     }
 }

@@ -38,10 +38,11 @@
     line-height: 20px;
 }
 
-.author__discovery h1:first-child {
+.author__discovery :is(h1, h2, h3):first-child {
+    margin-top: 0;
     text-decoration: underline;
 }
 
-.author__discovery h1:first-child:hover {
+.author__discovery :is(h1, h2, h3):first-child:hover {
     text-decoration: none;
 }

@@ -10,16 +10,16 @@ const Header = props => {
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles.author}>
-            <Link href={"/"}>
-              <h3 className={`link ${styles.author__name}`}>Anuj Singh</h3>
+            <Link href={"/"} className={styles.author__link}>
+              <h3 className={styles.author__name}>Anuj Singh</h3>
             </Link>
           </div>
           <div className={styles.navigation}>
-            <Link href={"/projects"}>
-              <h4 className={"link"}>Projects</h4>
+            <Link href={"/projects"} className={styles.nav__link}>
+              Projects
             </Link>
-            <Link href={"/discoveries"}>
-              <h4 className={"link"}>Discoveries</h4>
+            <Link href={"/discoveries"} className={styles.nav__link}>
+              Discoveries
             </Link>
           </div>
         </div>
