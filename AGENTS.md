@@ -1,9 +1,10 @@
 # AGENTS.md
 
-Portfolio site built with Next.js 12 (Pages Router), React 18, Recoil and SWR, in
+Portfolio site built with Next.js 15 (Pages Router), React 18, Recoil and SWR, in
 plain JavaScript. This repo contains no content: all Markdown is fetched in the
 browser at runtime from the GitHub repo `JackCompass/googleme`. To change site
-content, edit that repo instead.
+content, edit that repo instead. Pin Node to `24.x` (`.nvmrc` / `engines`) for
+Vercel.
 
 ## Commands
 
@@ -27,7 +28,8 @@ content, edit that repo instead.
 
 - Each component has its markup in `X.js`, its logic in `useX.js` and its
   styles in `X.module.css`.
-- Use Next 12 `<Link>` with a single `<a>` child.
+- Use Next `<Link>` without a nested `<a>`; pass `className`, `target`, and
+  `rel` on `Link` itself.
 - Add dark-mode rules (`prefers-color-scheme`) next to any new color styles.
 - Format with `.prettierrc` and write commit messages with prefixes like
   `fix:`, `feat:`, `docs:` or `chore:`.

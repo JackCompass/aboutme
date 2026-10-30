@@ -33,11 +33,9 @@ const Discoveries = ({ fileContents, fileError }) => {
                       href={`/discoveries/${extractFileName(
                         fileContent.filename,
                       )}`}>
-                      <a>
-                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
-                          {fileContent.length !== 0 ? fileContent.data : ""}
-                        </ReactMarkdown>
-                      </a>
+                      <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                        {fileContent.length !== 0 ? fileContent.data : ""}
+                      </ReactMarkdown>
                     </Link>
                   </div>
                 </div>
