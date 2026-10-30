@@ -10,17 +10,30 @@ import "react-loading-skeleton/dist/skeleton.css";
 const Projects = ({ fileContents, fileError }) => {
   const {} = useProjects();
 
-  if (fileContents === undefined && fileError === undefined) {
-    // if both the parameters are undefined, then the data is still loading.
-    // In such case we will show shimmer effect.
+  if (fileError) {
+    throw new Error("Error while fetching projects data");
+  }
+
+  // TEMP DEBUG: always show skeleton so grid gap can be verified without racing a fast load. REVERT THIS.
+  return (
+    <div className={styles.author__projects}>
+      <Skeleton height={200} />
+      <Skeleton height={200} />
+      <Skeleton height={200} />
+      <Skeleton height={200} />
+    </div>
+  );
+
+  // The data has not arrived yet, so show the shimmer effect.
+  if (fileContents === undefined) {
     return (
       <div className={styles.author__projects}>
-        <Skeleton height={200} count={2} />
-        <Skeleton height={200} count={2} />
+        <Skeleton height={200} />
+        <Skeleton height={200} />
+        <Skeleton height={200} />
+        <Skeleton height={200} />
       </div>
     );
-  } else if (fileError) {
-    throw new Error("Error while fetching projects data");
   } else {
     return (
       <>
