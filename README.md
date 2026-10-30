@@ -1,34 +1,84 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# aboutme
 
-## Getting Started
+Personal portfolio site built with [Next.js](https://nextjs.org/) (Pages Router). It renders About, Projects, and Discoveries content fetched at runtime from the [`JackCompass/googleme`](https://github.com/JackCompass/googleme) GitHub repository.
 
-First, run the development server:
+## Prerequisites
 
-```bash
-npm run dev
-# or
-yarn dev
+- **Node.js** 16.x or 18.x (recommended). Next.js 12 works best on these LTS lines.
+- **npm** 8+ (comes with Node). This repo uses `package-lock.json`, so prefer npm over yarn/pnpm.
+
+No environment variables are required for local development. Content is loaded from public GitHub URLs.
+
+## Local setup
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/JackCompass/aboutme.git
+   cd aboutme
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+
+The app hot-reloads when you edit files under `pages/`, `components/`, `styles/`, and related modules.
+
+## Develop locally
+
+### Useful scripts
+
+| Command           | Description                                      |
+| ----------------- | ------------------------------------------------ |
+| `npm run dev`     | Start Next.js in development mode (port 3000)    |
+| `npm run build`   | Create an optimized production build             |
+| `npm run start`   | Serve the production build (run `build` first)   |
+| `npm run lint`    | Run ESLint (`next lint` / `next/core-web-vitals`) |
+
+### Project layout
+
+```text
+aboutme/
+├── components/     # UI for about, projects, discoveries, header, errors
+├── network/        # GitHub API helpers (axios + SWR)
+├── pages/          # Next.js routes (index, projects, discoveries, api)
+├── public/         # Static assets (favicon, author images)
+├── state/          # Recoil atoms and helpers
+└── styles/         # Global and module CSS
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Content source
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+Projects and discoveries are Markdown files in [`JackCompass/googleme`](https://github.com/JackCompass/googleme). The app:
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+1. Lists the repo tree via the GitHub API.
+2. Classifies files matching `.preview.md`, `.md`, and `discovery.md`.
+3. Loads file contents from `raw.githubusercontent.com`.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+To change site content, edit that repository; restart or refresh the local app to pick up updates. Unauthenticated GitHub API calls are rate-limited (~60/hour), so heavy reloads may hit the limit.
 
-## Learn More
+### Formatting and linting
 
-To learn more about Next.js, take a look at the following resources:
+- ESLint is configured via `.eslintrc.json` (`eslint-config-next`).
+- Prettier options live in `.prettierrc` for editor integration. Format on save is recommended; there is no dedicated `npm run format` script yet.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Production build check
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Before opening a PR, verify a clean production build:
 
-## Deploy on Vercel
+```bash
+npm run build
+npm run start
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Then open [http://localhost:3000](http://localhost:3000) and smoke-test the home, projects, and discoveries pages.
