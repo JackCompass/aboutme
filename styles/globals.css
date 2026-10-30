@@ -1,8 +1,35 @@
+:root,
+html[data-theme="light"] {
+  color-scheme: light;
+  --bg: #ffffff;
+  --text: #000000;
+  --text-inverted: #ffffff;
+  --bg-inverted: #000000;
+  --code-bg: #fafafa;
+  --border: #eaeaea;
+  --skeleton-base: #ebebeb;
+  --skeleton-highlight: #f5f5f5;
+}
+
+html[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #000000;
+  --text: #ffffff;
+  --text-inverted: #000000;
+  --bg-inverted: #ffffff;
+  --code-bg: #111111;
+  --border: #222222;
+  --skeleton-base: #333333;
+  --skeleton-highlight: #444444;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: Oxygen, sans-serif;
+  color: var(--text);
+  background: var(--bg);
 }
 
 a:link,
@@ -22,14 +49,4 @@ a:visited {
 
 * {
   box-sizing: border-box;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
 }

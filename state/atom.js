@@ -33,3 +33,8 @@ export const discoveryFilesData = atom({
   key: "discoveryFilesDataKey",
   default: [],
 });
+
+export const themeState = atom({
+  key: "themeStateKey",
+  default: "dark",
+});
