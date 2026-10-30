@@ -30,8 +30,26 @@
 }
 
 .author__discovery {
+    position: relative;
     height: 208px;
     overflow: hidden;
+}
+
+.author__discovery::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 64px;
+    pointer-events: none;
+    background: linear-gradient(to bottom, transparent, white);
+}
+
+@media (prefers-color-scheme: dark) {
+    .author__discovery::after {
+        background: linear-gradient(to bottom, transparent, black);
+    }
 }
 
 .author__discovery p {
