@@ -1,8 +1,22 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
+const themeInitScript = `
+(function () {
+  try {
+    var theme = localStorage.getItem("theme");
+    if (theme !== "light" && theme !== "dark") {
+      theme = "dark";
+    }
+    document.documentElement.setAttribute("data-theme", theme);
+  } catch (e) {
+    document.documentElement.setAttribute("data-theme", "dark");
+  }
+})();
+`;
+
 const Document = () => {
   return (
-    <Html>
+    <Html data-theme="dark">
       <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
@@ -15,6 +29,7 @@ const Document = () => {
           rel="stylesheet"
         />
         <link rel={"icon"} type="image/x-icon" href={"/favicon.svg"} />
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </Head>
       <body>
         <Main />

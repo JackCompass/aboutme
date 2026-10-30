@@ -46,13 +46,6 @@
 
 .author__projects a {
     font-size: 1.15rem;
-    color: black;
+    color: var(--text);
     text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-    .author__projects a {
-        color: #fff;
-        text-decoration: none;
-    }
 }

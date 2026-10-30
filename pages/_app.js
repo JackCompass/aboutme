@@ -3,6 +3,21 @@ import Error from "../components/error/Error";
 import { RecoilRoot } from "recoil";
 import { SkeletonTheme } from "react-loading-skeleton";
 import Head from "next/head";
+import useTheme from "../components/theme/useTheme";
+
+function ThemeAwareApp({ Component, pageProps }) {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
+  return (
+    <SkeletonTheme
+      duration={0.8}
+      baseColor={isDark ? "#333333" : "#ebebeb"}
+      highlightColor={isDark ? "#444444" : "#f5f5f5"}>
+      <Component {...pageProps} />
+    </SkeletonTheme>
+  );
+}
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -12,9 +27,7 @@ function MyApp({ Component, pageProps }) {
       </Head>
       <RecoilRoot>
         <Error>
-          <SkeletonTheme duration={0.8}>
-            <Component {...pageProps} />
-          </SkeletonTheme>
+          <ThemeAwareApp Component={Component} pageProps={pageProps} />
         </Error>
       </RecoilRoot>
     </>

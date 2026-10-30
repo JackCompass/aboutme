@@ -19,14 +19,8 @@
 }
 
 .author__discoveries a {
-    color: black;
+    color: var(--text);
     text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-    .author__discoveries a {
-        color: #fff;
-    }
 }
 
 .author__discovery {
