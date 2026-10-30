@@ -1,11 +1,13 @@
 .container {
     width: 550px;
     margin: 0 auto;
+    padding-top: 24px;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
+    align-items: baseline;
     width: 100%;
     margin: 0 auto;
     flex-wrap: wrap;
@@ -16,22 +18,20 @@
     position: relative;
 }
 
-.navigation {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-.navigation h4:hover {
+.author__link,
+.author__link:link,
+.author__link:visited,
+.author__link:hover,
+.author__link:active {
+    color: #000;
     text-decoration: none;
 }
 
-.navigation h4 {
-    margin: auto 8px;
-    text-decoration: underline;
-    text-decoration-thickness: 2px;
-    font-weight: 600;
+.author__name {
+    margin: 0;
+    font-size: 1.17em;
+    font-weight: bold;
 }
-
 
 .author__name:hover {
     background-color: black;
@@ -41,24 +41,64 @@
 .author__name::after {
     position: absolute;
     content: "";
-    height: 23px;
+    height: 1.1em;
     width: 13px;
     background-color: black;
-    top: 19px;
-    left: 95px;
+    top: 0.15em;
+    left: calc(100% + 4px);
     animation: moveForward 0.8s infinite;
 }
 
+.navigation {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+}
+
+.nav__link,
+.nav__link:link,
+.nav__link:visited,
+.nav__link:active {
+    margin: 0 8px;
+    color: #000;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+.nav__link:hover {
+    text-decoration: none;
+    color: #000;
+}
+
 @media (prefers-color-scheme: dark) {
+    .author__link,
+    .author__link:link,
+    .author__link:visited,
+    .author__link:hover,
+    .author__link:active,
+    .nav__link,
+    .nav__link:link,
+    .nav__link:visited,
+    .nav__link:active,
+    .nav__link:hover {
+        color: #fff;
+    }
+
     .author__name::after {
         background-color: white;
+    }
+
+    .author__name:hover {
+        background-color: white;
+        color: black;
     }
 }
 
 @keyframes moveForward {
     50% {
         opacity: 0%;
-
     }
 }
 
@@ -71,11 +111,13 @@
 @media (max-width: 370px) {
     .header {
         flex-direction: column;
+        align-items: flex-start;
     }
     .navigation {
         flex-direction: column;
+        align-items: flex-start;
     }
-    .navigation h4 {
+    .nav__link {
         margin-bottom: 8px;
     }
 }

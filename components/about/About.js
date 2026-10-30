@@ -58,7 +58,7 @@ const About = () => {
         <h2 className={styles.author__section_title}>Discoveries</h2>
         <Discoveries
           fileContents={discoveriesContent}
-          fileError={previewContentError}
+          fileError={discoveriesContentError}
         />
       </div>
     </>
