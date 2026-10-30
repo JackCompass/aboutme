@@ -82,9 +82,3 @@ npm run start
 ```
 
 Then open [http://localhost:3000](http://localhost:3000) and smoke-test the home, projects, and discoveries pages.
-
-## Learn more
-
-- [Next.js documentation](https://nextjs.org/docs)
-- [Pages Router](https://nextjs.org/docs/pages/building-your-application)
-- [Deploying Next.js](https://nextjs.org/docs/deployment)
