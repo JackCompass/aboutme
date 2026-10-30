@@ -14,13 +14,6 @@
     border-radius: 12px;
 }
 
-.image_container:hover {
-    transform: rotateY(180deg);
-    transition-duration: 2s;
-    background-image: url("https://png.pngtree.com/png-vector/20190716/ourlarge/pngtree-programming-icon-trendy-style-isolated-background-png-image_1543692.jpg");
-    background-size: cover;
-}
-
 .author__description {
     margin: 0;
     padding: 8px;
