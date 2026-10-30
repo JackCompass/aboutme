@@ -50,3 +50,13 @@ a:visited {
 * {
   box-sizing: border-box;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+pre {
+  overflow-x: auto;
+  max-width: 100%;
+}

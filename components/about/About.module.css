@@ -7,7 +7,11 @@
 }
 
 .image_container {
+    width: 120px;
     min-width: 120px;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+    align-self: flex-start;
     background-image: url("/ponytail.png");
     background-size: cover;
     background-position: center;
@@ -53,9 +57,13 @@
     text-decoration: none;
 }
 
-@media (max-width: 370px) {
+@media (max-width: 500px) {
     .author {
         flex-direction: column;
+    }
+
+    .image_container {
+        align-self: center;
     }
 
     .author__description {
