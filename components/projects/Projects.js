@@ -14,16 +14,6 @@ const Projects = ({ fileContents, fileError }) => {
     throw new Error("Error while fetching projects data");
   }
 
-  // TEMP DEBUG: always show skeleton so grid gap can be verified without racing a fast load. REVERT THIS.
-  return (
-    <div className={styles.author__projects}>
-      <Skeleton height={200} />
-      <Skeleton height={200} />
-      <Skeleton height={200} />
-      <Skeleton height={200} />
-    </div>
-  );
-
   // The data has not arrived yet, so show the shimmer effect.
   if (fileContents === undefined) {
     return (

@@ -11,14 +11,6 @@ const Discoveries = ({ fileContents, fileError }) => {
     throw new Error("Error while fetching discoveries data");
   }
 
-  // TEMP DEBUG: always show skeleton so gap can be verified without racing a fast load. REVERT THIS.
-  return (
-    <div className={styles.author__discoveries}>
-      <Skeleton height={200} />
-      <Skeleton height={200} />
-    </div>
-  );
-
   if (fileContents === undefined) {
     return (
       <div className={styles.author__discoveries}>
