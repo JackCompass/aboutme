@@ -32,7 +32,7 @@ const MoonIcon = () => (
 );
 
 const Header = props => {
-  const { theme, toggleTheme } = useHeader();
+  const { theme, toggleTheme, replaceSectionNav } = useHeader();
   const isDark = theme === "dark";
 
   return (
@@ -45,10 +45,16 @@ const Header = props => {
             </Link>
           </div>
           <div className={styles.navigation}>
-            <Link href={"/projects"} className={styles.nav__link}>
+            <Link
+              href={"/projects"}
+              replace={replaceSectionNav}
+              className={styles.nav__link}>
               Projects
             </Link>
-            <Link href={"/discoveries"} className={styles.nav__link}>
+            <Link
+              href={"/discoveries"}
+              replace={replaceSectionNav}
+              className={styles.nav__link}>
               Discoveries
             </Link>
             <button
