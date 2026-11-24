@@ -4,9 +4,11 @@ import { RecoilRoot } from "recoil";
 import { SkeletonTheme } from "react-loading-skeleton";
 import Head from "next/head";
 import useTheme from "../components/theme/useTheme";
+import useHistoryMorph from "../components/transitionLink/useHistoryMorph";
 
 function ThemeAwareApp({ Component, pageProps }) {
   const { theme } = useTheme();
+  useHistoryMorph();
   const isDark = theme === "dark";
 
   return (

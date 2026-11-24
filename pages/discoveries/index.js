@@ -10,7 +10,9 @@ const Posts = () => {
     <>
       <Header>
         <div className={styles.section__info}>
-          <h1 className={styles.section__title}>Discoveries</h1>
+          <h1 className={styles.section__title} data-morph="/discoveries">
+            Discoveries
+          </h1>
           <p className={styles.section__description}>
             In my free time I like to read, create and tinker with new
             technologies. Sometimes I find myself finding some patterns,

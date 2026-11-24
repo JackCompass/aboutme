@@ -9,7 +9,10 @@ const ProjectDetails = ({ projectTitle }) => {
   } else {
     return (
       <>
-        <ShowProject fileContent={projectDetail} />
+        <ShowProject
+          fileContent={projectDetail}
+          morphKey={`/projects/${projectTitle}`}
+        />
       </>
     );
   }

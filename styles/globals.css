@@ -81,3 +81,10 @@ pre {
   overflow-x: auto;
   max-width: 100%;
 }
+
+/* Page navigation morph (components/transitionLink): shared titles move
+   between pages while the rest of the page crossfades. */
+html[data-page-morph]::view-transition-group(*) {
+  animation-duration: 400ms;
+  animation-timing-function: ease-in-out;
+}

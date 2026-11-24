@@ -18,6 +18,15 @@
     border-radius: 12px;
 }
 
+/* Squircle where supported; a squircle corner looks tighter than a round one
+   of the same radius, so it needs a larger radius. Others keep 12px rounding. */
+@supports (corner-shape: squircle) {
+    .image_container {
+        border-radius: 36px;
+        corner-shape: squircle;
+    }
+}
+
 .author__description {
     margin: 0;
     padding: 8px;

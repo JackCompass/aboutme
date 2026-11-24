@@ -2,7 +2,7 @@ import styles from "./Projects.module.css";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import useProjects from "./useProjects";
-import Link from "next/link";
+import TransitionLink from "../transitionLink/TransitionLink";
 import { extractFileName } from "../../state/utility";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -31,17 +31,19 @@ const Projects = ({ fileContents, fileError }) => {
           {fileContents.length !== 0 ? (
             <>
               {fileContents.map((fileContent, index) => {
+                const href = `/projects/${extractFileName(
+                  fileContent.filename,
+                )}`;
                 return (
                   <div key={index}>
-                    <Link
+                    <TransitionLink
                       className={"navigate-link"}
-                      href={`/projects/${extractFileName(
-                        fileContent.filename,
-                      )}`}>
+                      href={href}
+                      data-morph={href}>
                       <ReactMarkdown remarkPlugins={[remarkGfm]}>
                         {fileContent.length !== 0 ? fileContent.data : ""}
                       </ReactMarkdown>
-                    </Link>
+                    </TransitionLink>
                   </div>
                 );
               })}

@@ -18,8 +18,9 @@ const About = () => {
         <div className={styles.image_container} />
         <div>
           <p className={styles.author__description}>
-            Hey, I am Anuj Singh. I am a software engineer by profession. I either build or break stuff all the time
-            and sometimes I write about them too.
+            Hey, I am Anuj Singh. I am a software engineer by profession. I
+            either build or break stuff all the time and sometimes I write about
+            them too.
           </p>
           <div className={styles.author__social_links}>
             <Link
@@ -55,7 +56,9 @@ const About = () => {
         </ul>
       </div>
       <div>
-        <h2 className={styles.author__section_title}>Projects</h2>
+        <h2 className={styles.author__section_title} data-morph="/projects">
+          Projects
+        </h2>
         <Projects
           fileContents={previewContent}
           fileError={previewContentError}
@@ -63,7 +66,9 @@ const About = () => {
       </div>
 
       <div>
-        <h2 className={styles.author__section_title}>Discoveries</h2>
+        <h2 className={styles.author__section_title} data-morph="/discoveries">
+          Discoveries
+        </h2>
         <Discoveries
           fileContents={discoveriesContent}
           fileError={discoveriesContentError}

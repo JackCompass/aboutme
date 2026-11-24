@@ -9,7 +9,9 @@ const Discovery = ({ discoveryFile }) => {
   const { discoveryDetail } = useDiscovery(discoveryFile);
   return (
     <>
-      <div className={styles.author__discovery}>
+      <div
+        className={styles.author__discovery}
+        data-morph={`/discoveries/${discoveryFile}`}>
         <ReactMarkdown
           remarkPlugins={[remarkGfm]}
           rehypePlugins={[rehypeHighlight]}>

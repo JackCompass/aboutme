@@ -1,7 +1,7 @@
 import styles from "./Discoveries.module.css";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import Link from "next/link";
+import TransitionLink from "../transitionLink/TransitionLink";
 import { extractFileName } from "../../state/utility";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -26,17 +26,17 @@ const Discoveries = ({ fileContents, fileError }) => {
         {fileContents.length !== 0 ? (
           <>
             {fileContents.map((fileContent, index) => {
+              const href = `/discoveries/${extractFileName(
+                fileContent.filename,
+              )}`;
               return (
                 <div key={index}>
                   <div className={styles.author__discovery}>
-                    <Link
-                      href={`/discoveries/${extractFileName(
-                        fileContent.filename,
-                      )}`}>
+                    <TransitionLink href={href} data-morph={href}>
                       <ReactMarkdown remarkPlugins={[remarkGfm]}>
                         {fileContent.length !== 0 ? fileContent.data : ""}
                       </ReactMarkdown>
-                    </Link>
+                    </TransitionLink>
                   </div>
                 </div>
               );

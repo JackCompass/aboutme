@@ -10,7 +10,9 @@ const ProjectModels = () => {
     <>
       <Header>
         <div className={styles.section__info}>
-          <h1 className={styles.section__title}>Projects</h1>
+          <h1 className={styles.section__title} data-morph="/projects">
+            Projects
+          </h1>
           <p className={styles.section__description}>
             Take a look at some of the projects I have developed. Few of them
             still might be in development. Most of the projects I developed in

@@ -1,5 +1,5 @@
 import styles from "./Header.module.css";
-import Link from "next/link";
+import TransitionLink from "../transitionLink/TransitionLink";
 import useHeader from "./useHeader";
 
 const SunIcon = () => (
@@ -40,28 +40,30 @@ const Header = props => {
       <div className={styles.container}>
         <div className={styles.header}>
           <div className={styles.author}>
-            <Link href={"/"} className={styles.author__link}>
+            <TransitionLink href={"/"} className={styles.author__link}>
               <h3 className={styles.author__name}>Anuj Singh</h3>
-            </Link>
+            </TransitionLink>
           </div>
           <div className={styles.navigation}>
-            <Link
+            <TransitionLink
               href={"/projects"}
               replace={replaceSectionNav}
               className={styles.nav__link}>
               Projects
-            </Link>
-            <Link
+            </TransitionLink>
+            <TransitionLink
               href={"/discoveries"}
               replace={replaceSectionNav}
               className={styles.nav__link}>
               Discoveries
-            </Link>
+            </TransitionLink>
             <button
               type="button"
               className={styles.theme__toggle}
               onClick={toggleTheme}
-              aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+              aria-label={
+                isDark ? "Switch to light theme" : "Switch to dark theme"
+              }
               title={isDark ? "Switch to light theme" : "Switch to dark theme"}>
               {isDark ? <SunIcon /> : <MoonIcon />}
             </button>
