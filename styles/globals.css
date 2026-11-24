@@ -23,6 +23,27 @@ html[data-theme="dark"] {
   --skeleton-highlight: #444444;
 }
 
+/* Theme toggle radial wipe. useTheme sets --wipe-x/y/r and data-theme-wipe
+   before starting the view transition. */
+html[data-theme-wipe]::view-transition-old(root),
+html[data-theme-wipe]::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+html[data-theme-wipe]::view-transition-new(root) {
+  animation: theme-wipe 700ms ease-in-out;
+}
+
+@keyframes theme-wipe {
+  from {
+    clip-path: circle(0 at var(--wipe-x) var(--wipe-y));
+  }
+  to {
+    clip-path: circle(var(--wipe-r) at var(--wipe-x) var(--wipe-y));
+  }
+}
+
 html,
 body {
   padding: 0;

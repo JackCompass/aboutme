@@ -37,13 +37,7 @@
     bottom: 0;
     height: 64px;
     pointer-events: none;
-    background: linear-gradient(to bottom, transparent, white);
-}
-
-@media (prefers-color-scheme: dark) {
-    .author__discovery::after {
-        background: linear-gradient(to bottom, transparent, black);
-    }
+    background: linear-gradient(to bottom, transparent, var(--bg));
 }
 
 .author__discovery p {
