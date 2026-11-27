@@ -1,5 +1,6 @@
 import "../styles/globals.css";
 import Error from "../components/error/Error";
+import Flair from "../components/flair/Flair";
 import { RecoilRoot } from "recoil";
 import { SkeletonTheme } from "react-loading-skeleton";
 import Head from "next/head";
@@ -17,6 +18,7 @@ function ThemeAwareApp({ Component, pageProps }) {
       baseColor={isDark ? "#333333" : "#ebebeb"}
       highlightColor={isDark ? "#444444" : "#f5f5f5"}>
       <Component {...pageProps} />
+      <Flair />
     </SkeletonTheme>
   );
 }

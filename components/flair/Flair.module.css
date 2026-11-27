@@ -1,0 +1,126 @@
+/* Full-screen layer that never blocks clicks. */
+.flair {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 5;
+}
+
+/* Only show where there is room beside the 800px content column. */
+@media (max-width: 1280px) {
+  .flair {
+    display: none;
+  }
+}
+
+/* As big as the space beside the content allows, up to 380px wide. */
+.tree {
+  position: absolute;
+  right: 2vw;
+  bottom: 0;
+  width: min(380px, calc(50vw - 430px));
+  aspect-ratio: 620 / 730;
+  overflow: visible; /* let the outermost leaves poke out of the box */
+}
+
+/* Ink drawing: white lines on black in dark mode, black on white in light
+   mode. Shapes are filled with the page background so that whatever is in
+   front hides what is behind it. */
+.wood {
+  fill: var(--bg);
+  stroke: var(--text);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.trunk {
+  stroke-width: 2.2;
+}
+
+.bark {
+  fill: none;
+  stroke-width: 1.25;
+  opacity: 0.82;
+}
+
+.hatching {
+  stroke-width: 1.05;
+}
+
+.innerBranches {
+  stroke-width: 1.7;
+}
+
+.sprigs {
+  fill: var(--bg);
+  stroke: var(--text);
+  stroke-linejoin: round;
+}
+
+/* Leaf layers, back to front: faint and thin at the back, bright and bold at
+   the front, which gives the canopy depth without any color. */
+.deep {
+  stroke-width: 1;
+  stroke-opacity: 0.42;
+}
+
+.mid {
+  stroke-width: 1.15;
+  stroke-opacity: 0.7;
+}
+
+.front {
+  stroke-width: 1.3;
+  stroke-opacity: 0.92;
+}
+
+.highlight {
+  stroke-width: 1.55;
+}
+
+.bird {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 18px;
+  fill: var(--bg);
+  stroke: var(--text);
+  stroke-width: 1.2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  transform: translate(-100px, -100px); /* off screen until JS places it */
+  will-change: transform;
+}
+
+.bird svg {
+  display: block;
+  overflow: visible;
+}
+
+.eye {
+  fill: var(--text);
+  stroke: none;
+}
+
+.wing {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+
+/* Hide the legs while in the air, and flap the wings unless gliding. */
+.bird[data-state="flying"] .legs,
+.bird[data-state="gliding"] .legs {
+  display: none;
+}
+
+.bird[data-state="flying"] .wing {
+  animation: flap 0.18s ease-in-out infinite alternate;
+}
+
+@keyframes flap {
+  to {
+    transform: scaleY(-1);
+  }
+}
